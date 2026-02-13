@@ -30,51 +30,44 @@ class _GameScreenState extends State<GameScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: Stack(
         children: [
-          Expanded(
-            child: Stack(
+          Positioned(
+            top: 50,
+            left: 50,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: ValueListenableBuilder(
+                valueListenable: counter,
+                builder: (context, score, child) {
+                  return Text(
+                    'Score: $score',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+          Positioned(
+            top: 50,
+            right: 50,
+            child: Row(
               children: [
-                Positioned(
-                  top: 50,
-                  left: 50,
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: ValueListenableBuilder(
-                      valueListenable: counter,
-                      builder: (context, score, child) {
-                        return Text(
-                          'Score: $score',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
+                IconButton(
+                  icon: const Icon(Icons.music_note, color: Colors.black),
+                  onPressed: () {},
                 ),
-                Positioned(
-                  top: 50,
-                  right: 50,
-                  child: Row(
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.music_note, color: Colors.black),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.volume_up, color: Colors.black),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
+                IconButton(
+                  icon: const Icon(Icons.volume_up, color: Colors.black),
+                  onPressed: () {},
                 ),
               ],
             ),
