@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
+
 import 'package:gamepert1/game/managers/audio_manager.dart';
-import 'game/components/fruit_catcher_game.dart';
+
+import 'game/fruit_catcher_game.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +33,7 @@ class _GameScreenState extends State<GameScreen> {
   @override
   void initState() {
     super.initState();
+    game = FruitCatcherGame();
   }
 
   @override
@@ -48,7 +51,7 @@ class _GameScreenState extends State<GameScreen> {
             child: Stack(
               children: [
                 GameWidget(game: game),
-                Container(color: Colors.white),
+
                 Positioned(
                   top: 50,
                   left: 50,
