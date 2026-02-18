@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flame/game.dart';
+import 'game/components/fruit_catcher_game.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,6 +38,7 @@ class _GameScreenState extends State<GameScreen> {
           Expanded(
             child: Stack(
               children: [
+                GameWidget(game: game),
                 Container(color: Colors.white),
                 Positioned(
                   top: 50,
