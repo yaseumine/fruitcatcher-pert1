@@ -10,6 +10,5 @@ class FruitCatcherGame extends FlameGame {
   @override
   Future<void> onLoad() async {
     await super.onLoad();
-    // Di sini nanti kita akan memuat aset gambar buah & keranjang
   }
 }
