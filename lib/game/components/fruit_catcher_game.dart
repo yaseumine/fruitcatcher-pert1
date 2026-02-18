@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 
 class FruitCatcherGame extends FlameGame {
   @override
-  Color backgroundColor() => const Color(0xFF87CEEB); // Warna biru langit
+  Color backgroundColor() => const Color(0xFF87CEEB);
 
   final ValueNotifier<int> scoreNotifier = ValueNotifier<int>(0);
-
   @override
   Future<void> onLoad() async {
     await super.onLoad();
+    // Play background music
+    AudioManager().playBackgroundMusic(); // Update
   }
 }
