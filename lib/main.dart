@@ -34,6 +34,12 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   @override
+  void dispose() {
+    game.onRemove();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
