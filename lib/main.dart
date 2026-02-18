@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
+import 'package:gamepert1/game/managers/audio_manager.dart';
 import 'game/components/fruit_catcher_game.dart';
 
 void main() async {
@@ -79,7 +80,9 @@ class _GameScreenState extends State<GameScreen> {
                       ),
                       IconButton(
                         icon: const Icon(Icons.volume_up, color: Colors.black),
-                        onPressed: () {},
+                        onPressed: () {
+                          AudioManager().toggleSfx();
+                        },
                       ),
                     ],
                   ),
